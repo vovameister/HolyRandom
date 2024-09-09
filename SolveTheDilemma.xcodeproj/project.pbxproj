@@ -8,19 +8,63 @@
 
 /* Begin PBXBuildFile section */
 		6F2789F42C873CD800A43C0D /* SolveTheDilemmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2789F32C873CD800A43C0D /* SolveTheDilemmaApp.swift */; };
-		6F2789F62C873CD800A43C0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2789F52C873CD800A43C0D /* ContentView.swift */; };
-		6F2789F82C873CD800A43C0D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2789F72C873CD800A43C0D /* Item.swift */; };
+		6F2789F62C873CD800A43C0D /* WheelMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2789F52C873CD800A43C0D /* WheelMainView.swift */; };
+		6F2789F82C873CD800A43C0D /* WheelItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2789F72C873CD800A43C0D /* WheelItemModel.swift */; };
 		6F2789FA2C873CD900A43C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2789F92C873CD900A43C0D /* Assets.xcassets */; };
 		6F2789FD2C873CD900A43C0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2789FC2C873CD900A43C0D /* Preview Assets.xcassets */; };
+		6F278A042C87470200A43C0D /* WheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A032C87470200A43C0D /* WheelViewModel.swift */; };
+		6F278A062C87478000A43C0D /* WheelOfFortune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A052C87478000A43C0D /* WheelOfFortune.swift */; };
+		6F278A092C87488200A43C0D /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A082C87488200A43C0D /* ArrowView.swift */; };
+		6F278A0B2C87AC0400A43C0D /* CreateWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A0A2C87AC0400A43C0D /* CreateWheelView.swift */; };
+		6F278A0D2C87AC7200A43C0D /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A0C2C87AC7200A43C0D /* EditButton.swift */; };
+		6F278A102C88AC1500A43C0D /* СrossButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A0F2C88AC1500A43C0D /* СrossButton.swift */; };
+		6F278A132C88BA1300A43C0D /* CreateListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A122C88BA1300A43C0D /* CreateListCellView.swift */; };
+		6F278A152C88BB5600A43C0D /* CreateWheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A142C88BB5600A43C0D /* CreateWheelViewModel.swift */; };
+		6F278A1B2C88BEE700A43C0D /* PlusMinusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A1A2C88BEE700A43C0D /* PlusMinusView.swift */; };
+		6F278A1F2C8A091700A43C0D /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A1E2C8A091700A43C0D /* HistoryView.swift */; };
+		6F278A212C8A097500A43C0D /* AIGeneraterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A202C8A097500A43C0D /* AIGeneraterView.swift */; };
+		6F278A242C8A0A7800A43C0D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A232C8A0A7800A43C0D /* TabBarView.swift */; };
+		6F278A262C8A49C200A43C0D /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A252C8A49C200A43C0D /* HistoryViewModel.swift */; };
+		6F278A282C8A76FC00A43C0D /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F278A272C8A76FC00A43C0D /* TextView.swift */; };
+		6F9D23022C8F178900189943 /* SolveData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23002C8F178900189943 /* SolveData.xcdatamodeld */; };
+		6F9D23042C8F18B600189943 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23032C8F18B600189943 /* CoreDataManager.swift */; };
+		6F9D23262C8F3BC100189943 /* WheelItemListEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23222C8F3BC100189943 /* WheelItemListEntity+CoreDataClass.swift */; };
+		6F9D23272C8F3BC100189943 /* WheelItemListEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23232C8F3BC100189943 /* WheelItemListEntity+CoreDataProperties.swift */; };
+		6F9D23282C8F3BC100189943 /* WheelItemEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23242C8F3BC100189943 /* WheelItemEntity+CoreDataClass.swift */; };
+		6F9D23292C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23252C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift */; };
+		6F9D232B2C8F419000189943 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D232A2C8F419000189943 /* HistoryModel.swift */; };
+		6F9D23302C8F57FF00189943 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D232F2C8F57FF00189943 /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F2789F02C873CD800A43C0D /* SolveTheDilemma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolveTheDilemma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2789F32C873CD800A43C0D /* SolveTheDilemmaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveTheDilemmaApp.swift; sourceTree = "<group>"; };
-		6F2789F52C873CD800A43C0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		6F2789F72C873CD800A43C0D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		6F2789F52C873CD800A43C0D /* WheelMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelMainView.swift; sourceTree = "<group>"; };
+		6F2789F72C873CD800A43C0D /* WheelItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelItemModel.swift; sourceTree = "<group>"; };
 		6F2789F92C873CD900A43C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F2789FC2C873CD900A43C0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6F278A032C87470200A43C0D /* WheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewModel.swift; sourceTree = "<group>"; };
+		6F278A052C87478000A43C0D /* WheelOfFortune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOfFortune.swift; sourceTree = "<group>"; };
+		6F278A082C87488200A43C0D /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
+		6F278A0A2C87AC0400A43C0D /* CreateWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWheelView.swift; sourceTree = "<group>"; };
+		6F278A0C2C87AC7200A43C0D /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
+		6F278A0F2C88AC1500A43C0D /* СrossButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СrossButton.swift"; sourceTree = "<group>"; };
+		6F278A122C88BA1300A43C0D /* CreateListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListCellView.swift; sourceTree = "<group>"; };
+		6F278A142C88BB5600A43C0D /* CreateWheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWheelViewModel.swift; sourceTree = "<group>"; };
+		6F278A1A2C88BEE700A43C0D /* PlusMinusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMinusView.swift; sourceTree = "<group>"; };
+		6F278A1E2C8A091700A43C0D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		6F278A202C8A097500A43C0D /* AIGeneraterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGeneraterView.swift; sourceTree = "<group>"; };
+		6F278A232C8A0A7800A43C0D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		6F278A252C8A49C200A43C0D /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		6F278A272C8A76FC00A43C0D /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		6F9D23012C8F178900189943 /* SolveData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SolveData.xcdatamodel; sourceTree = "<group>"; };
+		6F9D23032C8F18B600189943 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6F9D23222C8F3BC100189943 /* WheelItemListEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheelItemListEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		6F9D23232C8F3BC100189943 /* WheelItemListEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheelItemListEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		6F9D23242C8F3BC100189943 /* WheelItemEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheelItemEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		6F9D23252C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheelItemEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		6F9D232A2C8F419000189943 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		6F9D232F2C8F57FF00189943 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +81,7 @@
 		6F2789E72C873CD700A43C0D = {
 			isa = PBXGroup;
 			children = (
+				6F9D23002C8F178900189943 /* SolveData.xcdatamodeld */,
 				6F2789F22C873CD800A43C0D /* SolveTheDilemma */,
 				6F2789F12C873CD800A43C0D /* Products */,
 			);
@@ -54,8 +99,12 @@
 			isa = PBXGroup;
 			children = (
 				6F2789F32C873CD800A43C0D /* SolveTheDilemmaApp.swift */,
-				6F2789F52C873CD800A43C0D /* ContentView.swift */,
-				6F2789F72C873CD800A43C0D /* Item.swift */,
+				6F278A222C8A0A6400A43C0D /* TabBar */,
+				6F278A182C88BB9100A43C0D /* Main */,
+				6F278A1C2C8A08C300A43C0D /* History */,
+				6F278A1D2C8A08D700A43C0D /* AIGenerated */,
+				6F278A112C88ACE100A43C0D /* Data */,
+				6F9D232E2C8F57E800189943 /* Extention */,
 				6F2789F92C873CD900A43C0D /* Assets.xcassets */,
 				6F2789FB2C873CD900A43C0D /* Preview Content */,
 			);
@@ -68,6 +117,119 @@
 				6F2789FC2C873CD900A43C0D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6F278A072C87483300A43C0D /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				6F2789F52C873CD800A43C0D /* WheelMainView.swift */,
+				6F278A032C87470200A43C0D /* WheelViewModel.swift */,
+				6F9D232C2C8F421D00189943 /* MainSubViews */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		6F278A0E2C87B16E00A43C0D /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A192C88BBAD00A43C0D /* CreateView */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		6F278A112C88ACE100A43C0D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6F2789F72C873CD800A43C0D /* WheelItemModel.swift */,
+				6F9D232A2C8F419000189943 /* HistoryModel.swift */,
+				6F9D23032C8F18B600189943 /* CoreDataManager.swift */,
+				6F9D230D2C8F33BF00189943 /* subClass */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6F278A182C88BB9100A43C0D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A072C87483300A43C0D /* MainView */,
+				6F278A0E2C87B16E00A43C0D /* Create */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6F278A192C88BBAD00A43C0D /* CreateView */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A0A2C87AC0400A43C0D /* CreateWheelView.swift */,
+				6F278A142C88BB5600A43C0D /* CreateWheelViewModel.swift */,
+				6F9D232D2C8F424D00189943 /* CreateWheelSub */,
+			);
+			path = CreateView;
+			sourceTree = "<group>";
+		};
+		6F278A1C2C8A08C300A43C0D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A1E2C8A091700A43C0D /* HistoryView.swift */,
+				6F278A252C8A49C200A43C0D /* HistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		6F278A1D2C8A08D700A43C0D /* AIGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A202C8A097500A43C0D /* AIGeneraterView.swift */,
+				6F278A272C8A76FC00A43C0D /* TextView.swift */,
+			);
+			path = AIGenerated;
+			sourceTree = "<group>";
+		};
+		6F278A222C8A0A6400A43C0D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A232C8A0A7800A43C0D /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		6F9D230D2C8F33BF00189943 /* subClass */ = {
+			isa = PBXGroup;
+			children = (
+				6F9D23222C8F3BC100189943 /* WheelItemListEntity+CoreDataClass.swift */,
+				6F9D23232C8F3BC100189943 /* WheelItemListEntity+CoreDataProperties.swift */,
+				6F9D23242C8F3BC100189943 /* WheelItemEntity+CoreDataClass.swift */,
+				6F9D23252C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift */,
+			);
+			path = subClass;
+			sourceTree = "<group>";
+		};
+		6F9D232C2C8F421D00189943 /* MainSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A082C87488200A43C0D /* ArrowView.swift */,
+				6F278A0C2C87AC7200A43C0D /* EditButton.swift */,
+				6F278A052C87478000A43C0D /* WheelOfFortune.swift */,
+			);
+			path = MainSubViews;
+			sourceTree = "<group>";
+		};
+		6F9D232D2C8F424D00189943 /* CreateWheelSub */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A122C88BA1300A43C0D /* CreateListCellView.swift */,
+				6F278A0F2C88AC1500A43C0D /* СrossButton.swift */,
+				6F278A1A2C88BEE700A43C0D /* PlusMinusView.swift */,
+			);
+			path = CreateWheelSub;
+			sourceTree = "<group>";
+		};
+		6F9D232E2C8F57E800189943 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				6F9D232F2C8F57FF00189943 /* Extentions.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +302,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F2789F62C873CD800A43C0D /* ContentView.swift in Sources */,
-				6F2789F82C873CD800A43C0D /* Item.swift in Sources */,
+				6F278A212C8A097500A43C0D /* AIGeneraterView.swift in Sources */,
+				6F278A152C88BB5600A43C0D /* CreateWheelViewModel.swift in Sources */,
+				6F278A042C87470200A43C0D /* WheelViewModel.swift in Sources */,
+				6F9D23022C8F178900189943 /* SolveData.xcdatamodeld in Sources */,
+				6F2789F62C873CD800A43C0D /* WheelMainView.swift in Sources */,
+				6F278A092C87488200A43C0D /* ArrowView.swift in Sources */,
+				6F278A1F2C8A091700A43C0D /* HistoryView.swift in Sources */,
+				6F278A062C87478000A43C0D /* WheelOfFortune.swift in Sources */,
+				6F9D232B2C8F419000189943 /* HistoryModel.swift in Sources */,
+				6F278A1B2C88BEE700A43C0D /* PlusMinusView.swift in Sources */,
+				6F278A0B2C87AC0400A43C0D /* CreateWheelView.swift in Sources */,
+				6F278A0D2C87AC7200A43C0D /* EditButton.swift in Sources */,
+				6F2789F82C873CD800A43C0D /* WheelItemModel.swift in Sources */,
+				6F9D23042C8F18B600189943 /* CoreDataManager.swift in Sources */,
+				6F278A282C8A76FC00A43C0D /* TextView.swift in Sources */,
+				6F278A132C88BA1300A43C0D /* CreateListCellView.swift in Sources */,
+				6F278A102C88AC1500A43C0D /* СrossButton.swift in Sources */,
+				6F9D23262C8F3BC100189943 /* WheelItemListEntity+CoreDataClass.swift in Sources */,
+				6F9D23272C8F3BC100189943 /* WheelItemListEntity+CoreDataProperties.swift in Sources */,
+				6F9D23282C8F3BC100189943 /* WheelItemEntity+CoreDataClass.swift in Sources */,
+				6F9D23292C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift in Sources */,
+				6F278A242C8A0A7800A43C0D /* TabBarView.swift in Sources */,
+				6F9D23302C8F57FF00189943 /* Extentions.swift in Sources */,
 				6F2789F42C873CD800A43C0D /* SolveTheDilemmaApp.swift in Sources */,
+				6F278A262C8A49C200A43C0D /* HistoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +468,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +498,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +534,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6F9D23002C8F178900189943 /* SolveData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6F9D23012C8F178900189943 /* SolveData.xcdatamodel */,
+			);
+			currentVersion = 6F9D23012C8F178900189943 /* SolveData.xcdatamodel */;
+			path = SolveData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6F2789E82C873CD700A43C0D /* Project object */;
 }
