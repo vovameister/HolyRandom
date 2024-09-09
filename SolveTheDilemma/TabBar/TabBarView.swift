@@ -5,7 +5,6 @@
 //  Created by Владимир Клевцов on 5.9.24..
 //
 import SwiftUI
-import CoreData
 
 struct MainTabView: View {
     private let wheelViewModel: WheelViewModel

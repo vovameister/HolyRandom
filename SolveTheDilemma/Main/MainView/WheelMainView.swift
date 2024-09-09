@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct WheelMainView: View {
 
     @StateObject var viewModel: WheelViewModel
