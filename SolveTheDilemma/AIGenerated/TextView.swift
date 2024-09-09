@@ -21,7 +21,6 @@ struct MultilineTextField: View {
                     .stroke(Color.gray, lineWidth: 1)
             )
             .onChange(of: text) { newText in
-                // Ограничиваем количество строк до 6
                 let lines = newText.split(whereSeparator: \.isNewline)
                 if lines.count > maxLines {
                     self.text = lines.prefix(maxLines).joined(separator: "\n")

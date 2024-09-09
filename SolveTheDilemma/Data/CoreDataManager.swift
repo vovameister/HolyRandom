@@ -51,7 +51,7 @@ class CoreDataManager {
                     let textData = wheelItemEntity.text
                     let text = textData
                    
-                    return WheelItem(text: text ?? "", id: UUID())
+                    return WheelItem(text: text ?? "", id: id ?? UUID())
                 }
 
                 return HistoryModel(date: creationDate, item: wheelItems)

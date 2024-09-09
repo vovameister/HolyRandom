@@ -17,11 +17,9 @@ class HistoryViewModel: ObservableObject {
     }
 
     func deleteGroup(_ group: HistoryModel) {
-           // Find the index of the group to delete
            if let index = historyGroups.firstIndex(where: { $0.id == group.id }) {
                historyGroups.remove(at: index)
-               
-               // Also delete the corresponding group from Core Data (if applicable)
+
                coreDataManager.deleteHistoryModel(group)
            }
        }

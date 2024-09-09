@@ -45,7 +45,7 @@ struct CreateWheelView: View {
                 Spacer()
                 
                 Button(action: {
-                    wheelViewModel.updateWords(with: createWheelViewModel.items)
+                    wheelViewModel.saveWords(with: createWheelViewModel.items)
                     presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Сохранить")

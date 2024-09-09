@@ -9,12 +9,14 @@ import SwiftUI
 
 struct HistoryView: View {
     @ObservedObject var viewModel: HistoryViewModel
-    
+    @ObservedObject var wheelViewModel: WheelViewModel
+    @Binding var selectedTab: Int
+
     var body: some View {
         ZStack {
             Color.pink
                 .ignoresSafeArea()
-            
+
             if viewModel.historyGroups.isEmpty {
                 Text("No saved data yet.")
                     .font(.headline)
@@ -29,14 +31,21 @@ struct HistoryView: View {
                             Spacer()
                             Button(action: {
                                 viewModel.deleteGroup(group)
-                            })  {
+                            }) {
                                 Image(systemName: "trash")
                                     .foregroundColor(.blue)
                             }
                         }) {
                             ForEach(group.item, id: \.id) { item in
-                                Text(item.text ?? "No Name")
-                                    .padding(.vertical, 8)
+                                Button(action: {
+                                    wheelViewModel.updateWords(with: group.item)
+
+                                    selectedTab = 0
+                                }) {
+                                    Text(item.text ?? "No Name")
+                                        .padding(.vertical, 8)
+                                        .foregroundColor(.white)
+                                }
                             }
                         }
                     }
@@ -51,6 +60,7 @@ struct HistoryView: View {
         }
     }
 }
+
 #Preview {
-    HistoryView(viewModel: HistoryViewModel())
+    HistoryView(viewModel: HistoryViewModel(), wheelViewModel: WheelViewModel(), selectedTab: .constant(1))
 }

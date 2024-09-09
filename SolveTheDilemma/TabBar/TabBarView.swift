@@ -7,14 +7,11 @@
 import SwiftUI
 
 struct MainTabView: View {
-    private let wheelViewModel: WheelViewModel
-    private let historyViewModel: HistoryViewModel
-
+    @State private var selectedTab: Int = 0 
+    @StateObject private var wheelViewModel = WheelViewModel()
+    @StateObject private var historyViewModel = HistoryViewModel()
 
     init() {
-        self.wheelViewModel = WheelViewModel()
-        self.historyViewModel = HistoryViewModel()
-
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor.systemTeal
@@ -30,24 +27,27 @@ struct MainTabView: View {
     }
 
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             WheelMainView(viewModel: wheelViewModel)
                 .tabItem {
                     Image(systemName: "circle.grid.cross")
                     Text("Wheel")
                 }
+                .tag(0)
 
-            HistoryView(viewModel: historyViewModel)
+            HistoryView(viewModel: historyViewModel, wheelViewModel: wheelViewModel, selectedTab: $selectedTab)
                 .tabItem {
                     Image(systemName: "book.fill")
                     Text("History")
                 }
+                .tag(1)
 
             AIGeneratorView()
                 .tabItem {
                     Image(systemName: "brain.head.profile")
                     Text("AI Generator")
                 }
+                .tag(2)
         }
     }
 }

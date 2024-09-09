@@ -18,9 +18,13 @@ class WheelViewModel: ObservableObject {
     func updateWords(with items: [WheelItem]) {
    
         self.words = items.map { $0.text ?? "" }
-        coreDataManager.saveWheelItemList(items: items, creationDate: Date())
     }
    
+    func saveWords(with items: [WheelItem]) {
+   
+        self.words = items.map { $0.text ?? "" }
+        coreDataManager.saveWheelItemList(items: items, creationDate: Date())
+    }
     func fetchGroups() {
 
     }
