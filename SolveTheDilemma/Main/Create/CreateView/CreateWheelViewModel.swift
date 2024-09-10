@@ -7,7 +7,7 @@
 import Combine
 import Foundation
 
-class CreateWheelViewModel: ObservableObject {
+final class CreateWheelViewModel: ObservableObject {
     @Published var items: [WheelItem] = [
         WheelItem(text: "Первый элемент", id: UUID()),
         WheelItem(text: "Второй элемент", id: UUID()),

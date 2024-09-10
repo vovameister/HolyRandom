@@ -7,7 +7,7 @@
 import Combine
 import Foundation
 
-class HistoryViewModel: ObservableObject {
+final class HistoryViewModel: ObservableObject {
     
     private let coreDataManager = CoreDataManager.shared
     @Published var historyGroups: [HistoryModel] = []

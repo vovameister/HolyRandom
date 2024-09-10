@@ -33,6 +33,16 @@ struct AIGeneratorView: View {
                     }
                     .padding()
                 }
+        .onAppear() {
+            Task {
+                do {
+                    let history = try await ChatGptRequest.shared.sendRequest()
+                    print("История успешно получена: \(history)")
+                } catch {
+                    print("Произошла ошибка: \(error)")
+                }
+            }
+        }
         }
     private func hideKeyboard() {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

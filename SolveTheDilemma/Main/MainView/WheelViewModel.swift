@@ -8,7 +8,7 @@ import Combine
 import Foundation
 
 
-class WheelViewModel: ObservableObject {
+final class WheelViewModel: ObservableObject {
     @Published var words: [String] = []
     @Published var selectedWord: String = ""
     @Published var duration = 4
