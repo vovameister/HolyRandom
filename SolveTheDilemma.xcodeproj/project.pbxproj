@@ -34,7 +34,10 @@
 		6F9D23292C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23252C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift */; };
 		6F9D232B2C8F419000189943 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D232A2C8F419000189943 /* HistoryModel.swift */; };
 		6F9D23302C8F57FF00189943 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D232F2C8F57FF00189943 /* Extentions.swift */; };
-		6F9D23332C90923B00189943 /* ChatGptRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23322C90923B00189943 /* ChatGptRequest.swift */; };
+		6F9D23332C90923B00189943 /* ChatGptRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23322C90923B00189943 /* ChatGptRequestService.swift */; };
+		6F9D23362C91B0EA00189943 /* AIGeneraterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23352C91B0EA00189943 /* AIGeneraterViewModel.swift */; };
+		6F9D23382C922EF200189943 /* TabBanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23372C922EF200189943 /* TabBanViewModel.swift */; };
+		6F9D233A2C923AEE00189943 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9D23392C923AEE00189943 /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +69,10 @@
 		6F9D23252C8F3BC100189943 /* WheelItemEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WheelItemEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		6F9D232A2C8F419000189943 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		6F9D232F2C8F57FF00189943 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
-		6F9D23322C90923B00189943 /* ChatGptRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGptRequest.swift; sourceTree = "<group>"; };
+		6F9D23322C90923B00189943 /* ChatGptRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGptRequestService.swift; sourceTree = "<group>"; };
+		6F9D23352C91B0EA00189943 /* AIGeneraterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGeneraterViewModel.swift; sourceTree = "<group>"; };
+		6F9D23372C922EF200189943 /* TabBanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBanViewModel.swift; sourceTree = "<group>"; };
+		6F9D23392C923AEE00189943 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				6F278A202C8A097500A43C0D /* AIGeneraterView.swift */,
-				6F278A272C8A76FC00A43C0D /* TextView.swift */,
+				6F9D23352C91B0EA00189943 /* AIGeneraterViewModel.swift */,
+				6F9D23342C91B0CF00189943 /* AIViews */,
 			);
 			path = AIGenerated;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				6F278A232C8A0A7800A43C0D /* TabBarView.swift */,
+				6F9D23372C922EF200189943 /* TabBanViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -238,9 +246,18 @@
 		6F9D23312C90921300189943 /* NetworkRequest */ = {
 			isa = PBXGroup;
 			children = (
-				6F9D23322C90923B00189943 /* ChatGptRequest.swift */,
+				6F9D23322C90923B00189943 /* ChatGptRequestService.swift */,
 			);
 			path = NetworkRequest;
+			sourceTree = "<group>";
+		};
+		6F9D23342C91B0CF00189943 /* AIViews */ = {
+			isa = PBXGroup;
+			children = (
+				6F278A272C8A76FC00A43C0D /* TextView.swift */,
+				6F9D23392C923AEE00189943 /* BannerView.swift */,
+			);
+			path = AIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F9D23382C922EF200189943 /* TabBanViewModel.swift in Sources */,
 				6F278A212C8A097500A43C0D /* AIGeneraterView.swift in Sources */,
 				6F278A152C88BB5600A43C0D /* CreateWheelViewModel.swift in Sources */,
 				6F278A042C87470200A43C0D /* WheelViewModel.swift in Sources */,
@@ -328,9 +346,11 @@
 				6F2789F82C873CD800A43C0D /* WheelItemModel.swift in Sources */,
 				6F9D23042C8F18B600189943 /* CoreDataManager.swift in Sources */,
 				6F278A282C8A76FC00A43C0D /* TextView.swift in Sources */,
+				6F9D23362C91B0EA00189943 /* AIGeneraterViewModel.swift in Sources */,
 				6F278A132C88BA1300A43C0D /* CreateListCellView.swift in Sources */,
 				6F278A102C88AC1500A43C0D /* СrossButton.swift in Sources */,
-				6F9D23332C90923B00189943 /* ChatGptRequest.swift in Sources */,
+				6F9D23332C90923B00189943 /* ChatGptRequestService.swift in Sources */,
+				6F9D233A2C923AEE00189943 /* BannerView.swift in Sources */,
 				6F9D23262C8F3BC100189943 /* WheelItemListEntity+CoreDataClass.swift in Sources */,
 				6F9D23272C8F3BC100189943 /* WheelItemListEntity+CoreDataProperties.swift in Sources */,
 				6F9D23282C8F3BC100189943 /* WheelItemEntity+CoreDataClass.swift in Sources */,

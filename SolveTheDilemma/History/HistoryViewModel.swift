@@ -9,7 +9,11 @@ import Foundation
 
 final class HistoryViewModel: ObservableObject {
     
-    private let coreDataManager = CoreDataManager.shared
+    private let coreDataManager: CoreDataManagerHistoryProtocol
+    
+    init(coreDataManager: CoreDataManagerHistoryProtocol) {
+        self.coreDataManager = coreDataManager
+    }
     @Published var historyGroups: [HistoryModel] = []
     
     func fetchGroups() {

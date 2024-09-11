@@ -64,5 +64,5 @@ struct WheelOfFortune: View {
     }
 }
 #Preview {
-    WheelOfFortune(viewModel: WheelViewModel())
+    WheelOfFortune(viewModel: WheelViewModel(coreDataManager: CoreDataManager()))
 }

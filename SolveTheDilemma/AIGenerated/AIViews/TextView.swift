@@ -28,7 +28,3 @@ struct MultilineTextField: View {
             }
     }
 }
-#Preview {
-    @State var previewText = ""
-    return MultilineTextField(text: $previewText)
-}

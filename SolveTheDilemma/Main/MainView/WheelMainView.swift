@@ -59,5 +59,5 @@ struct WheelMainView: View {
 }
 
 #Preview {
-    WheelMainView(viewModel: WheelViewModel())
+    WheelMainView(viewModel: WheelViewModel(coreDataManager: CoreDataManager()))
 }

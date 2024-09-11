@@ -7,15 +7,18 @@
 
 import Foundation
 
-final class ChatGptRequest {
-    static let shared = ChatGptRequest()
+protocol ChatGptRequestProtocol {
+    func sendRequest(text: String) async throws -> HistoryModel
+}
 
-    func sendRequest() async throws -> HistoryModel {
-        guard let url = URL(string: "https://7cbf-24-135-205-92.ngrok-free.app/api/chat") else {
+final class ChatGptRequestService: ChatGptRequestProtocol {
+
+    func sendRequest(text: String) async throws -> HistoryModel {
+        guard let url = URL(string: "https://0b52-24-135-205-92.ngrok-free.app/api/chat") else {
             throw URLError(.badURL)
         }
    
-        let requestObject = ChatRequest(message: "10 видов деревьев")
+        let requestObject = ChatRequest(message: text)
   
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

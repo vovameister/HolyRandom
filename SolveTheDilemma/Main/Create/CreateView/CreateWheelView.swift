@@ -31,7 +31,7 @@ struct CreateWheelView: View {
                 
                 List {
                     ForEach($createWheelViewModel.items) { $item in
-                        CreateListCellView(item: $item, viewModel: createWheelViewModel)
+                        CreateListCellView(item: $item)
                             .frame(height: 20)
                     }
                 }
@@ -59,5 +59,5 @@ struct CreateWheelView: View {
     }
 }
 #Preview {
-    CreateWheelView(wheelViewModel: WheelViewModel())
+    CreateWheelView(wheelViewModel: WheelViewModel(coreDataManager: CoreDataManager()))
 }

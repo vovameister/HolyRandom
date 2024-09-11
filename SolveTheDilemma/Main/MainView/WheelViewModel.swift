@@ -13,7 +13,11 @@ final class WheelViewModel: ObservableObject {
     @Published var selectedWord: String = ""
     @Published var duration = 4
     
-    private let coreDataManager = CoreDataManager.shared
+    private let coreDataManager: CoreDataCreateProtocol
+    
+    init(coreDataManager: CoreDataCreateProtocol) {
+        self.coreDataManager = coreDataManager
+    }
     
     func updateWords(with items: [WheelItem]) {
    

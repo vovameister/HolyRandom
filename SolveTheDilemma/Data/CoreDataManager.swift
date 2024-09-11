@@ -1,8 +1,7 @@
 
 import CoreData
 
-class CoreDataManager {
-    static let shared = CoreDataManager()
+final class CoreDataManager: CoreDataManagerHistoryProtocol, CoreDataCreateProtocol, ObservableObject {
     let persistentContainer: NSPersistentContainer
 
     init() {
@@ -84,4 +83,12 @@ class CoreDataManager {
                print("Failed to delete history group: \(error)")
            }
        }
+}
+
+protocol CoreDataManagerHistoryProtocol {
+    func fetchHistoryModels() -> [HistoryModel]
+    func deleteHistoryModel(_ group: HistoryModel)
+}
+protocol CoreDataCreateProtocol {
+    func saveWheelItemList(items: [WheelItem], creationDate: Date)
 }

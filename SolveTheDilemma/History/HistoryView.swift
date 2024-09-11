@@ -44,7 +44,7 @@ struct HistoryView: View {
                                 }) {
                                     Text(item.text ?? "No Name")
                                         .padding(.vertical, 8)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.black)
                                 }
                             }
                         }
@@ -62,5 +62,5 @@ struct HistoryView: View {
 }
 
 #Preview {
-    HistoryView(viewModel: HistoryViewModel(), wheelViewModel: WheelViewModel(), selectedTab: .constant(1))
+    HistoryView(viewModel: HistoryViewModel(coreDataManager: CoreDataManager()), wheelViewModel: WheelViewModel(coreDataManager: CoreDataManager()), selectedTab: .constant(1))
 }

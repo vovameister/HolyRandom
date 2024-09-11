@@ -8,10 +8,18 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab: Int = 0 
-    @StateObject private var wheelViewModel = WheelViewModel()
-    @StateObject private var historyViewModel = HistoryViewModel()
+    
+    private var coreDataManager: CoreDataManager
+    private var wheelViewModel: WheelViewModel
+    private var historyViewModel: HistoryViewModel
+    private var AIViewModel: AIGeneraterViewModel
 
     init() {
+        coreDataManager = CoreDataManager()
+        wheelViewModel = WheelViewModel(coreDataManager: coreDataManager)
+        historyViewModel = HistoryViewModel(coreDataManager: coreDataManager)
+        AIViewModel = AIGeneraterViewModel()
+        
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor.systemTeal
@@ -42,7 +50,7 @@ struct MainTabView: View {
                 }
                 .tag(1)
 
-            AIGeneratorView()
+            AIGeneratorView(viewModel: AIViewModel)
                 .tabItem {
                     Image(systemName: "brain.head.profile")
                     Text("AI Generator")
