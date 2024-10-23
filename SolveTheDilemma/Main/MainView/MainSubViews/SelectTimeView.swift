@@ -13,23 +13,23 @@ struct SelectTimeView: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            TimeButton2(image: "figure.roll.runningpace", isSelected: selectedTab == 0) {
+            TimeButton(title: "1 sec", isSelected: selectedTab == 0) {
                 selectedTab = 0
                 viewModel.duration = 1
             }
             .clipShape(CustomRoundedCorners(corners: [.topLeft, .bottomLeft], radius: 10))
             
-            TimeButton2(image: "wheelchair", isSelected: selectedTab == 1) {
+            TimeButton(title: "3 sec", isSelected: selectedTab == 1) {
                 selectedTab = 1
                 viewModel.duration = 3
             }
             
-            TimeButton2(image: "hare", isSelected: selectedTab == 2)  {
+            TimeButton(title: "5 sec", isSelected: selectedTab == 2)  {
                 selectedTab = 2
                 viewModel.duration = 5
             }
             
-            TimeButton2(image: "tortoise", isSelected: selectedTab == 3) {
+            TimeButton(title: "10 sec", isSelected: selectedTab == 3) {
                 selectedTab = 3
                 viewModel.duration = 10
             }

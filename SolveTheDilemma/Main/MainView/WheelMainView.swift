@@ -58,7 +58,7 @@ struct WheelMainView: View {
                     spinTriggered.toggle()
                 }) {
                     //Image(systemName: "arrow.uturn.down.circle.fill")
-                    Image(systemName: "figure.roll.runningpace.circle")
+                    Image(systemName: "hare")
                     //Image(systemName: "digitalcrown.arrow.clockwise.fill")
                         .resizable()
                         //.scaleEffect(x: -1, y: 1)
