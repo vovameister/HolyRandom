@@ -10,7 +10,7 @@ struct DownArrowView: View {
     var body: some View {
         Text("↓")
             .font(.largeTitle)
-            .foregroundColor(.red)
+            .foregroundColor(.white)
             .rotationEffect(.degrees(0))
     }
 }

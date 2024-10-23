@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WheelItem: Identifiable {
+struct WheelItem: Identifiable, Equatable {
     var id: UUID
     var text: String?
     

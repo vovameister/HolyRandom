@@ -36,6 +36,7 @@ struct BannerView: View {
                         Text(item.text ?? "")
                             .font(.body)
                             .padding(.bottom, 2)
+                            .foregroundColor(.black)
                     }
                 }
                 .padding()

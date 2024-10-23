@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HistoryModel: Identifiable {
+struct HistoryModel: Identifiable, Equatable {
     var id = UUID()
     var date: Date
     var item: [WheelItem]

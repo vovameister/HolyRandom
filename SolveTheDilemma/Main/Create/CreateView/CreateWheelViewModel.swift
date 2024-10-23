@@ -4,16 +4,21 @@
 //
 //  Created by Владимир Клевцов on 4.9.24..
 //
-import Combine
 import Foundation
 
 final class CreateWheelViewModel: ObservableObject {
-    @Published var items: [WheelItem] = [
-        WheelItem(text: "Первый элемент", id: UUID()),
-        WheelItem(text: "Второй элемент", id: UUID()),
-        WheelItem(text: "Третий элемент", id: UUID())
-    ]
-
+    @Published var items: [WheelItem]
+    
+    init() {
+        self.items = [
+            WheelItem(text: "", id: UUID()),
+            WheelItem(text: "", id: UUID())
+        ]
+    }
+    
+    init(items: [WheelItem]) {
+        self.items = items
+    }
     func updateItemText(for item: WheelItem, with newText: String) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index].text = newText
@@ -28,5 +33,8 @@ final class CreateWheelViewModel: ObservableObject {
         if !items.isEmpty {
             items.removeLast()
         }
+    }
+    deinit {
+        print("create deinited")
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 final class AIGeneraterViewModel: ObservableObject {
     @Published var requestText: String = ""
-    @Published var historyItems: [WheelItem] = []
+    @Published var aigeneratedItems: [WheelItem] = []
     @Published var showBanner: Bool = false
     var networkService: ChatGptRequestProtocol = ChatGptRequestService()
     
@@ -20,17 +20,18 @@ final class AIGeneraterViewModel: ObservableObject {
         }
         Task {
             do {
-                let history = try await networkService.sendRequest(text: requestText)
+                let aigenerated = try await networkService.sendRequest(text: requestText)
                 await MainActor.run {
-                    self.historyItems = history.item
+                    self.aigeneratedItems = aigenerated.item
                     self.showBanner = true
                 }
-                
-                
-                print("История успешно получена: \(history)")
+                print("История успешно получена: \(aigenerated)")
             } catch {
                 print("Произошла ошибка: \(error)")
             }
         }
+    }
+    deinit {
+        print("ai deinited")
     }
 }

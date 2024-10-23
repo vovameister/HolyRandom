@@ -13,36 +13,53 @@ struct CreateWheelView: View {
     @StateObject private var createWheelViewModel = CreateWheelViewModel()
     @ObservedObject var wheelViewModel: WheelViewModel
     
-    let cellHeight: CGFloat = 20.0
-    let rowSpacing: CGFloat = 25.0
+    let cellHeight: CGFloat = 30.0
+    let rowSpacing: CGFloat = 20.0
+    
+    init(items: [WheelItem]? = nil, wheelViewModel: WheelViewModel) {
+        if let items = items {
+            _createWheelViewModel = StateObject(wrappedValue: CreateWheelViewModel(items: items))
+        } else {
+            _createWheelViewModel = StateObject(wrappedValue: CreateWheelViewModel())
+        }
+        self.wheelViewModel = wheelViewModel
+    }
     
     var body: some View {
         ZStack {
-            Color.mint
-                .ignoresSafeArea()
+            GradientBackgroundView()
+                .onTapGesture {
+                    hideKeyboard()
+                }
             VStack {
                 HStack {
                     Spacer()
                     CrossButtonView(action: {
                         presentationMode.wrappedValue.dismiss()
                     })
-                        .padding(.trailing, 20)
+                    .padding(.trailing, 20)
                 }
                 
                 List {
                     ForEach($createWheelViewModel.items) { $item in
                         CreateListCellView(item: $item)
-                            .frame(height: 20)
+                            .background(Color.white)
+                            //.listRowBackground(Color.clear)
+                            .listRowBackground(Color.white)
                     }
+                    .listRowSeparator(.hidden)
                 }
-                .frame(maxHeight: CGFloat(createWheelViewModel.items.count) * (cellHeight + rowSpacing))
+                .padding(.horizontal, 20)
+                .onTapGesture {
+                    hideKeyboard()
+                }
                 .animation(.easeInOut, value: createWheelViewModel.items.count)
                 .listStyle(PlainListStyle())
                 
+                
                 PlusMinusButtonsView(viewModel: createWheelViewModel)
                     .animation(.easeInOut, value: createWheelViewModel.items.count)
-                
-                Spacer()
+                Spacer(minLength: 30)
                 
                 Button(action: {
                     wheelViewModel.saveWords(with: createWheelViewModel.items)
@@ -50,8 +67,8 @@ struct CreateWheelView: View {
                 }) {
                     Text("Сохранить")
                         .padding()
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
+                        .background(.wheelYellow)
+                        .foregroundColor(.wheelBlue)
                         .cornerRadius(8)
                 }
             }

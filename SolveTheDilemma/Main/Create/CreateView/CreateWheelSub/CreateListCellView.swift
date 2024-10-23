@@ -10,10 +10,10 @@ struct CreateListCellView: View {
     @Binding var item: WheelItem
     
     var body: some View {
-        HStack {
-            TextField("Введите текст", text: Binding($item.text, replacingNilWith: ""))
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-        }
+        TextField("Введите текст", text: Binding($item.text, replacingNilWith: ""))
+            .font(.system(size: 18, weight: .regular))
+            .foregroundColor(.black)
+            //.textFieldStyle(
     }
 }
 

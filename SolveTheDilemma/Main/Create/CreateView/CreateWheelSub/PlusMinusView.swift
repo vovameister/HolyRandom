@@ -18,7 +18,7 @@ struct PlusMinusButtonsView: View {
                 Image(systemName: "minus.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
-                    .foregroundColor(.red)
+                    .foregroundColor(.wheelBlue)
             }
             .padding(.leading, 40)
             Spacer()
@@ -29,7 +29,7 @@ struct PlusMinusButtonsView: View {
                 Image(systemName: "plus.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.wheelTrash)
             }
             .padding(.trailing, 40)
         }

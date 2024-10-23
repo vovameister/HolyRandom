@@ -8,52 +8,103 @@
 import SwiftUI
 
 struct WheelMainView: View {
-
-    @StateObject var viewModel: WheelViewModel
-    @State private var isPresented = false
+    @ObservedObject var viewModel: WheelViewModel
+    @State private var isPresentedChange = false
+    @State private var isPresentedCreate = false
+    @State private var spinTriggered = true
+    @State private var resetTrigger = false
+    @State private var showLabelResult = false
     
     var body: some View {
         ZStack {
-            Color.mint
+            Color.white
                 .ignoresSafeArea()
+            Image("backMain")
+                .resizable()
+                .scaledToFill()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .frame(minWidth: 0)
             VStack {
-                ZStack {
+                Spacer().frame(minHeight: 40, maxHeight: 80)
+                    .layoutPriority(2)
+                HStack {
                     EditButtonView(action: {
-                        isPresented.toggle()
-                    })
-                    .offset(x: 150, y: 0)
-                    .padding(.top, 10)
-                    .padding(.bottom, 40)
-                    .padding(.trailing, 20)
+                        isPresentedChange.toggle()
+                    }, iconName: "square.and.pencil.circle.fill")
+                    
+                    Spacer()
+                    
                     DownArrowView()
-                        .offset(x: 0, y: 40)
+                        .offset(y: 15)
+                    
+                    Spacer()
+                    
+                    EditButtonView(action: {
+                        isPresentedCreate.toggle()
+                    }, iconName: "plus.circle")
                 }
-                WheelOfFortune(viewModel: viewModel)
-                    .padding(.top, 20)
-                Spacer()
+                .padding(.leading, 40)
+                .padding(.trailing, 40)
+                let wheel = WheelOfFortune(viewModel: viewModel, spinTriggered: $spinTriggered)
+                if resetTrigger {
+                    wheel
+                } else {
+                    wheel
+                }
+                
+                Spacer().layoutPriority(2)
                 Button(action: {
                     viewModel.spinWheel()
+                    spinTriggered.toggle()
                 }) {
-                    Text("Spin the Wheel")
+                    //Image(systemName: "arrow.uturn.down.circle.fill")
+                    Image(systemName: "figure.roll.runningpace.circle")
+                    //Image(systemName: "digitalcrown.arrow.clockwise.fill")
+                        .resizable()
+                        //.scaleEffect(x: -1, y: 1)
+                        .frame(width: 50, height: 50)
                         .padding()
-                        .background(Color.orange)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .background(!viewModel.isSpinning ? Color.wheelYellow : Color.gray)
+                        .foregroundColor(.wheelBlue)
+                        .cornerRadius(50)
                 }
-                
-                Spacer()
-                
-                
-                Text("Selected: \(viewModel.selectedWord)")
-                    .font(.largeTitle)
-                    .padding()
-                
-                
-                Spacer()
+                .disabled(viewModel.isSpinning)
+                Spacer().layoutPriority(2)
+                SelectTimeView(viewModel: viewModel)
+                Spacer().layoutPriority(2)
             }
-            .fullScreenCover(isPresented: $isPresented) {
+            .padding(.bottom, 10)
+            .fullScreenCover(isPresented: $isPresentedCreate) {
                 CreateWheelView(wheelViewModel: viewModel)
             }
+            .fullScreenCover(isPresented: $isPresentedChange) {
+                CreateWheelView(items: viewModel.wheelItem, wheelViewModel: viewModel)
+            }
+            if showLabelResult {
+                BlurView()
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.6)
+                    .transition(.opacity)
+                
+                Text(viewModel.selectedWordShow)
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .foregroundColor(.black)
+                    .transition(.move(edge: .top).combined(with: .scale).combined(with: .opacity))
+            }
+        }
+        .animation(.easeInOut(duration: 0.6), value: showLabelResult)
+        .onChange(of: viewModel.wheelItem) { _ in
+            resetTrigger.toggle()
+        }
+        .onChange(of: viewModel.isSpinning) { _ in
+            if !viewModel.isSpinning {
+                showLabelResult.toggle()
+            }
+        }
+        .onTapGesture {
+            showLabelResult = false
         }
     }
 }
@@ -61,3 +112,4 @@ struct WheelMainView: View {
 #Preview {
     WheelMainView(viewModel: WheelViewModel(coreDataManager: CoreDataManager()))
 }
+
